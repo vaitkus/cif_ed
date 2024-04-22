@@ -1,0 +1,276 @@
+#\#CIF_2.0
+##############################################################################
+#                                                                            #
+#                    CIF Electron Diffraction Dictionary                     #
+#                                                                            #
+# This dictionary contains names and definitions of data items used          #
+# especially in describing structures determined by electron diffraction.    #
+#                                                                            #
+##############################################################################
+
+data_CIF_ED
+
+    _dictionary.title            CIF_ED
+    _dictionary.class            Instance
+    _dictionary.version          0.1.0
+    _dictionary.date             2024-04-22
+    _dictionary.uri
+        https://raw.githubusercontent.com/COMCIFS/cif_ed/main/cif_ed.dic
+    _dictionary.ddl_conformance  4.2.0
+    _dictionary.namespace        CifCore
+    _description.text                   
+;
+    This dictionary defines data items used to specify the aspects of
+    crystal structures determined by electron diffraction specific to
+    that technique.
+;
+
+save_ED_GROUP
+
+    _definition.id               ED_GROUP
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2024-04-22
+    _description.text                   
+;
+     The ED_GROUP data items describe atomic information specific to
+     crystallographic structure determination using electron
+     diffraction.
+;
+    _name.category_id            CIF_ED
+    _name.object_id              ED_GROUP
+    _import.get
+        [{'file':cif_core.dic 'save':CIF_CORE 'mode':Full 'dupl':Ignore}]
+
+save_
+
+save_chemical.absolute_configuration
+
+    _definition.id                '_chemical.absolute_configuration'
+    _alias.definition_id          '_chemical_absolute_configuration'
+    _definition.update            2024-04-22
+    _description.text
+;
+    Necessary conditions for this assignment are given by
+         Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
+                https://doi.org/10.1107/S0108767399004262
+                https://www.iucr.org/paper?sh0129
+         Flack, H. D. & Bernardinelli, G. (2000). J. Appl. Cryst. 33, 1143-1148.
+                https://doi.org/10.1107/S0021889800007184
+                https://www.iucr.org/paper?ks0021
+;
+    _name.category_id             chemical
+    _name.object_id               absolute_configuration
+    _type.purpose                 State
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         rm
+;
+         'reference molecule' Absolute configuration established by the
+         structure determination of a compound containing a chiral reference
+         molecule of known absolute configuration.
+;
+         ad
+;
+         'anomalous dispersion' Absolute configuration established by a-d
+         effects in diffraction measurements on the crystal.
+;
+         dyn
+;	 
+         Absolute configuration determined directly from dynamical refinement.
+;	 
+
+         rmad
+;
+         'rm + ad' Absolute configuration established by the structure
+         determination of a compound containing a chiral reference molecule of
+         known absolute configuration and confirmed by a-d effects in
+         diffraction measurements on the crystal.
+;
+         syn
+;
+         'synthetic' Absolute configuration has not been established by
+         anomalous-dispersion effects in diffraction measurements on the
+         crystal. The enantiomer has been assigned by reference to an
+         unchanging chiral centre in the synthetic procedure.
+;
+         unk
+;
+         'unknown' No firm chemical or a-d evidence for an assignment is
+         available. An arbitrary choice of enantiomer has been made.
+;
+         .
+;
+         Inapplicable.
+;
+
+save_
+
+save_diffrn.precession_angle
+
+    _definition.id                '_diffrn.precession_angle'
+    _alias.definition_id          '_diffrn_precession_angle'
+    _definition.update            2024-04-22
+    _description.text
+;
+    Angle at the sample of tilt from the normal direction of a radiation
+    beam moved in a precessional scan.
+;
+    _name.category_id             diffrn
+    _name.object_id               precession_angle
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   degrees
+
+save_
+
+save_diffrn.precession_angle_su
+    _definition.id                ’_diffrn.precession_angle_su’
+    _alias.definition_id          ’_diffrn_precession_angle_su’
+    _definition.update            2024-04-22
+    _description.text
+;
+    Standard uncertainty of _diffrn.precession_angle.
+;
+    _name.category_id             diffrn
+    _name.object_id               precession_angle_su
+    _name.linked_item_id          ’_diffrn.precession_angle’
+    _type.purpose                 SU
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
+
+save_
+
+save_diffrn_measurement.method_precession
+    _definition.id                ’_diffrn_measurement.method_precession’
+    _alias.definition_id          ’_diffrn_measurement_method_precession’
+    _definition.update            2024-04-22
+    _description.text
+;
+    Yes or no flag indicating if the radiation beam illuminates the sample
+    at an angle that is rotated about a precession axis.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               method_precession
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         yes                      'Precession method is used.'
+         y                        'Abbreviation for "yes".'
+         no                       'Precession method is not used.'
+         n                        'Abbreviation for "no".'
+
+    _enumeration.default          no
+
+save_
+
+save_diffrn_measurement.integration
+    _definition.id
+               ’_diffrn_measurement.integration’
+    _alias.definition_id
+               ’_diffrn_measurement_integration’
+    _definition.update            2024-04-22
+    _description.text
+;
+    Code describing the technique used to sample as completely as possible
+    the accessible range of reciprocal space.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               integration
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         continuous
+;
+         The detector collects a sequence of diffraction patterns from a
+         crystal at different tilt angles by rotating the goniometer. This
+         is commonly used with a transmission electron microscope in 3D
+         electron diffraction.
+;
+         rotation
+;
+         The detector records diffracted intensities continuously while the
+         sample is rotated. This is the usual mode for X-ray crystallography.
+;
+         stepwise
+;
+         The detector records diffracted intensities at intervals while the
+         sample is panned or tilted in discrete steps. Often used in 3D
+         electron diffraction.
+;
+
+    _enumeration.default          rotation
+
+save_
+
+save_refine.diffraction_theory
+    _definition.id                ’_refine.diffraction_theory’
+    _alias.definition_id          ’_refine_diffraction_theory’
+    _definition.update            2024-04-22
+    _description.text
+;
+    A code describing the beam path through
+    the specimen.
+;
+    _name.category_id             refine
+    _name.object_id               diffraction_theory
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         dynamical
+;
+         Interactions between propagating waves and matter are taken into
+	 account when calculating the amplitudes of diffracted beams.
+;
+         kinematical
+;
+         Interactions between propagating waves and matter are ignored
+	 when calculating the amplitudes of diffracted beams.
+;
+
+    _enumeration.default          kinematical
+
+save_
+
+
+
+
+
+
+
+
+
+
+
+     loop_
+    _dictionary_audit.version
+    _dictionary_audit.date
+    _dictionary_audit.revision
+ 
+      0.1.0    2024-04-22
+;
+   Initial draft of new or revised (from coreCIF) data definitions
+   following nanED round robin project (B. McMahon)
+;
