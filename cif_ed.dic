@@ -182,10 +182,8 @@ save_
 
 save_diffrn_measurement.integration
 
-    _definition.id
-               '_diffrn_measurement.integration'
-    _alias.definition_id
-               '_diffrn_measurement_integration'
+    _definition.id                '_diffrn_measurement.integration'
+    _alias.definition_id          '_diffrn_measurement_integration'
     _definition.update            2024-04-22
     _description.text
 ;
@@ -262,13 +260,13 @@ save_
     _dictionary_audit.version
     _dictionary_audit.date
     _dictionary_audit.revision
- 
-      0.0.1    2024-04-18
+
+         0.0.1                     2024-04-18
 ;
-   Basic skeleton of dictionary set up (no definitions).
+       Basic skeleton of dictionary set up (no definitions).
 ;
-      0.1.0    2024-04-22
+         0.1.0                     2024-04-22
 ;
-   Initial draft of new or revised (from coreCIF) data definitions
-   following nanED round robin project (B. McMahon)
+       Initial draft of new or revised (from coreCIF) data definitions
+       following nanED round robin project (B. McMahon)
 ;
