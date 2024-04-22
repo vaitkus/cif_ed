@@ -39,8 +39,9 @@ save_ED_GROUP
 ;
     _name.category_id            CIF_ED
     _name.object_id              ED_GROUP
+
     _import.get
-        [{'file':cif_core.dic 'save':CIF_CORE 'mode':Full 'dupl':Ignore}]
+        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
 
 save_
 
@@ -133,6 +134,7 @@ save_diffrn.precession_angle
 save_
 
 save_diffrn.precession_angle_su
+
     _definition.id                ’_diffrn.precession_angle_su’
     _alias.definition_id          ’_diffrn_precession_angle_su’
     _definition.update            2024-04-22
@@ -152,6 +154,7 @@ save_diffrn.precession_angle_su
 save_
 
 save_diffrn_measurement.method_precession
+
     _definition.id                ’_diffrn_measurement.method_precession’
     _alias.definition_id          ’_diffrn_measurement_method_precession’
     _definition.update            2024-04-22
@@ -179,6 +182,7 @@ save_diffrn_measurement.method_precession
 save_
 
 save_diffrn_measurement.integration
+
     _definition.id
                ’_diffrn_measurement.integration’
     _alias.definition_id
@@ -222,6 +226,7 @@ save_diffrn_measurement.integration
 save_
 
 save_refine.diffraction_theory
+
     _definition.id                ’_refine.diffraction_theory’
     _alias.definition_id          ’_refine_diffraction_theory’
     _definition.update            2024-04-22
@@ -242,29 +247,19 @@ save_refine.diffraction_theory
          dynamical
 ;
          Interactions between propagating waves and matter are taken into
-	 account when calculating the amplitudes of diffracted beams.
+         account when calculating the amplitudes of diffracted beams.
 ;
          kinematical
 ;
          Interactions between propagating waves and matter are ignored
-	 when calculating the amplitudes of diffracted beams.
+         when calculating the amplitudes of diffracted beams.
 ;
 
     _enumeration.default          kinematical
 
 save_
 
-
-
-
-
-
-
-
-
-
-
-     loop_
+    loop_
     _dictionary_audit.version
     _dictionary_audit.date
     _dictionary_audit.revision
