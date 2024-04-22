@@ -257,15 +257,15 @@ save_refine.diffraction_theory
 save_
 
     loop_
-    _dictionary_audit.version
-    _dictionary_audit.date
-    _dictionary_audit.revision
+      _dictionary_audit.version
+      _dictionary_audit.date
+      _dictionary_audit.revision
 
-         0.0.1                     2024-04-18
+         0.0.1                    2024-04-18
 ;
        Basic skeleton of dictionary set up (no definitions).
 ;
-         0.1.0                     2024-04-22
+         0.1.0                    2024-04-22
 ;
        Initial draft of new or revised (from coreCIF) data definitions
        following nanED round robin project (B. McMahon)
