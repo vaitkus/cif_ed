@@ -7,7 +7,7 @@ name: CIFSyntaxandStyleCheck
 on:
   push:
     branches:
-            - '**'
+            - '*'
     paths-ignore:
             - '.github/**'
 
