@@ -199,12 +199,15 @@ save_diffrn_measurement.integration
     loop_
       _enumeration_set.state
       _enumeration_set.detail
+         beam-tilt
+;
+         The radiation beam is tilted in order to collect intensities
+         in different regions of reciprocal space while the sample
+         remains stationary.
+;
          continuous
 ;
-         The detector collects a sequence of diffraction patterns from a
-         crystal at different tilt angles by rotating the goniometer. This
-         is commonly used with a transmission electron microscope in 3D
-         electron diffraction.
+         Synonym for "rotation" commonly used in 3D electron diffraction.
 ;
          rotation
 ;
@@ -229,8 +232,10 @@ save_refine.diffraction_theory
     _definition.update            2024-04-22
     _description.text
 ;
-    A code describing the beam path through
-    the specimen.
+    A code describing the approach to summation of diffracted beams
+    from scattering layers of the sample. In the kinematical
+    approximation the integrated intensities of the Bragg reflections
+    are proportional to the square of the modulus of the structure factor.
 ;
     _name.category_id             refine
     _name.object_id               diffraction_theory

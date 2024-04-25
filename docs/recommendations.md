@@ -42,7 +42,11 @@ This data item **should always be present with value 'electron'** for 3D ED stru
 
 ## `_diffrn_source` and `_diffrn_source_type`
 
-'Electron microscope' is often used as a value for `_diffrn_source` (defined as _The general class of the source of radiation._), but 'electron gun' may technically be more accurate. For `_diffrn_source_type` the usual options in electron diffraction are tungsten, LaB6, Schottky-effect or cold-effect guns.
+'Electron microscope' is often used as a value for `_diffrn_source` (defined as _The general class of the source of radiation._), but 'electron gun' may technically be more accurate. For `_diffrn_source_type` the usual options in electron diffraction are tungsten, LaB6, Schottky FEG (field-emission gun) or cold-effect FEG.
+
+## `_diffrn_source_voltage` and `_diffrn_radiation_wavelength`
+
+Both should be supplied for electron diffraction studies. The value of `_diffrn_radiation_wavelength` is expected to include a standard uncertainty to express the expected wavelength spread.
 
 ## `_diffrn_detector` and `_diffrn_detector_type`
 
@@ -54,4 +58,12 @@ If beam precession was used, this data item should be present and have the value
 
 ## `_diffrn_measurement_integration`
 
-The method of collecting data from regions of reciprocal space should take one of the values rotation, stepwise or continuous according to the technique used.
+The method of collecting data from regions of reciprocal space should take one of the values 'beam-tilt', 'rotation' (or its synonym 'continuous') or 'stepwise' according to the technique used. The beam-tilt method is sometimes called 'the rotation method' in 3D electron diffraction.
+
+## `exptl.crystals_number`
+
+The number of crystals used in the measurement of intensities should be specified.
+
+## `_refine.diffraction_theory`
+
+This data item can take the values 'dynamical' and 'kinematical', and should always be specified if refinement is performed using the dynamical theory.
