@@ -16,6 +16,8 @@ Possible keyword: `_refine_diffraction_theory 'value'`, with permitted values �
 
 *	Adding an additional option to `_chemical_absolute_configuration`. In addition to the existing options, an option ‘dyn’ could be used to specify determination by dynamical refinement
 
+*	Adding an option to specify values in the difference Fourier map. Currently, only `_refine_diff_density_max`, `_refine_diff_density_min` and `_refine_diff_density_rms` are available for the purpose, implying a difference density. The CIF dictionary also specifies that the units are e/Å^3. Possible solution: add three keywords `_refine_diff_potential_max`, `_refine_diff_potential_min` and `_refine_diff_potential_rms` to specify difference potential. The problem are the units. The numbers coming out of _Olex2_, _SHELXL_ or _Jana2020_ are derived from the units for the scattering factors, which are Å. Their Fourier transform thus has units of Å^-2. This, however, is not a very common unit for reporting electrostatic potential. A better unit would be either volts or e/Å. We need to discuss, which of the three options should be adopted in the CIF standard.
+
 *	Adding tools for specifying the orientation of individual frames. Possible specification:
 
 ```
