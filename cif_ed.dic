@@ -13,7 +13,7 @@ data_CIF_ED
     _dictionary.title            CIF_ED
     _dictionary.class            Instance
     _dictionary.version          0.1.0
-    _dictionary.date             2024-05-01
+    _dictionary.date             2024-05-03
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_ed/main/cif_ed.dic
     _dictionary.ddl_conformance  4.2.0
@@ -232,10 +232,14 @@ save_refine.diffraction_theory
     _definition.update            2024-04-22
     _description.text
 ;
-    A code describing the approach to summation of diffracted beams
-    from scattering layers of the sample. In the kinematical
-    approximation the integrated intensities of the Bragg reflections
-    are proportional to the square of the modulus of the structure factor.
+    A code describing the approach to the calculation of the
+    diffracted intensities. In the kinematical approximation,
+    interactions of diffracted waves with matter are neglected, and
+    integrated intensities of the Bragg reflections are proportional
+    to the square of the modulus of the structure factor. In the
+    dynamical calculation, interactions between diffracted waves are
+    taken into account, and the proportionality of the intensities and
+    the structure factors is not preserved.
 ;
     _name.category_id             refine
     _name.object_id               diffraction_theory
@@ -248,12 +252,12 @@ save_refine.diffraction_theory
       _enumeration_set.detail
          dynamical
 ;
-         Interactions between propagating waves and matter are taken into
-         account when calculating the amplitudes of diffracted beams.
+         Interactions between diffracted waves and matter are taken into
+         account when calculating the amplitudes of the diffracted beams.
 ;
          kinematical
 ;
-         Interactions between propagating waves and matter are ignored
+         Interactions between diffracted waves and matter are ignored
          when calculating the amplitudes of diffracted beams.
 ;
 
@@ -485,6 +489,34 @@ save_refine_diff.density_rms_su
 
 save_
 
+save_refine_ls.abs_structure_z-score
+
+    _definition.id                '_refine_ls.abs_structure_z-score'
+    _alias.definition_id          '_refine_ls_abs_structure_z-score'
+
+    _definition.update            2024-05-03
+    _description.text
+;
+    The z-score is a measure of confidence in an absolute structure
+    determination as described by Klar et al. (2023), based on the
+    method of Le Page et al. (1990). For centrosymmetric structures,
+    the only permitted value, if the data item is present, is
+    'inapplicable', represented by '.' .
+    Ref:  Klar, P. B. et al. (2023). Nature Chem. 15, 848-855.
+          Le Page, Y., Gabe, E. J. & Gainsford, G. J. (1990). J. Appl. Cryst.
+          23, 406-411.
+;
+    _name.category_id             refine_ls
+    _name.object_id               abs_structure_z_score
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            :
+    _units.code                   none
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
@@ -494,11 +526,13 @@ save_
 ;
        Basic skeleton of dictionary set up (no definitions).
 ;
-         0.1.0                    2024-05-01
+         0.1.0                    2024-05-03
 ;
        Initial draft of new or revised (from coreCIF) data definitions
        following nanED round robin project (B. McMahon)
 
        Updated definition of items in category REFINE_DIFF to modify
        units for electron diffraction. (bm, after Lukas Palatinus)
+
+       New item _refine_ls.abs_structure_z-score introduced.
 ;

@@ -2,7 +2,7 @@
 
 ### _Early draft for discussion_
 
-Most of the definitions in the core CIF dictionary can be applied to a description of a 3DED structure determination experiment. An example of good practice in describing the relevant experimental metadata follows, with some guidance for individual data items.
+Most of the definitions in the core CIF dictionary can be applied to a description of a 3D ED structure determination experiment. An example of good practice in describing the relevant experimental metadata follows, with some guidance for individual data items.
 
 ```
 _exptl_crystal_description            'nanocrystal'
@@ -37,12 +37,12 @@ The crystal colour is normally required by checkCIF, but can be difficult or imp
 
 ## `_diffrn_radiation_probe`
 
-This data item **should always be present with value 'electron'** for 3D ED structure determinations, to inform checkCIF of the nature of the study. The similar data item `_diffrn_radiation_type` is now deprecated and should not be used. More detailed description of the energy spectrum of the radiation source may be given in the data item _diffrn_radiation_wavelength.type if needed. _(bm: this last sentence seems to reflect changes introduced to the DDLm version of the core dictionary.)_
+This data item **should always be present with value 'electron'** for 3D ED structure determinations, to inform checkCIF of the nature of the study. The similar data item `_diffrn_radiation_type` is now deprecated and should **not** be used. More detailed description of the energy spectrum of the radiation source may be given in the data item _diffrn_radiation_wavelength.type if needed. _(bm: this last sentence seems to reflect changes introduced to the DDLm version of the core dictionary.)_
 
 
 ## `_diffrn_source` and `_diffrn_source_type`
 
-'Electron microscope' is often used as a value for `_diffrn_source` (defined as _The general class of the source of radiation._), but 'electron gun' may technically be more accurate. For `_diffrn_source_type` the usual options in electron diffraction are tungsten, LaB6, Schottky FEG (field-emission gun) or cold-effect FEG.
+'Electron microscope' is often used as a value for `_diffrn_source` (defined as _The general class of the source of radiation._), but 'electron gun' is technically more accurate. For `_diffrn_source_type` the usual options in electron diffraction are tungsten, LaB6, Schottky FEG (field-emission gun) or cold-effect FEG.
 
 ## `_diffrn_source_voltage` and `_diffrn_radiation_wavelength`
 
@@ -67,3 +67,11 @@ The number of crystals used in the measurement of intensities should be specifie
 ## `_refine.diffraction_theory`
 
 This data item can take the values 'dynamical' and 'kinematical', and should always be specified if refinement is performed using the dynamical theory.
+
+## `refine_diff.density_max`, `_min` and `_RMS`
+
+These quantities were defined in the original core CIF dictionary as indications of the final difference electron density. For electron diffraction, they should report the maximum, minimum and mean difference potential in the final difference Fourier map, and be expressed in units of electrons per ångström.
+
+## `_refine_ls.abs_structure_z_score`
+
+The statistical _z_ score can be determined as a robust measure of the confidence of an absolute structure assignment according to the procedure described in Klar, P. B., Krysiak, Y., Xu, H., Steciuk, G.,Cho, J., Zou, X. & Palatinus, L. (2023). Accurate structure models and absolute configuration determination using dynamical effects in continuous-rotation 3D electron diffraction data. _Nature Chem._ **15**, 848-855. This method is not specific to electron diffraction and may also be used for X-ray diffraction data, but for X-ray work it has largely been superseded by the Flack, Rogers and Parsons parameters.
