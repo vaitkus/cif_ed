@@ -13,7 +13,7 @@ data_CIF_ED
     _dictionary.title            CIF_ED
     _dictionary.class            Instance
     _dictionary.version          0.1.0
-    _dictionary.date             2024-05-03
+    _dictionary.date             2024-05-08
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_ed/main/cif_ed.dic
     _dictionary.ddl_conformance  4.2.0
@@ -627,7 +627,7 @@ save_
 ;
        Basic skeleton of dictionary set up (no definitions).
 ;
-         0.1.0                    2024-05-03
+         0.1.0                    2024-05-07
 ;
        Initial draft of new or revised (from coreCIF) data definitions
        following nanED round robin project (B. McMahon)
@@ -635,5 +635,9 @@ save_
        Updated definition of items in category REFINE_DIFF to modify
        units for electron diffraction. (bm, after Lukas Palatinus)
 
-       New item _refine_ls.abs_structure_z-score introduced.
+       New item _refine_ls.abs_structure_z-score introduced. (bm/Lukas)
+
+       New items _diffrn_radiation.illumination_mode,
+       _diffrn_measurement.tracking and *_method added; new examples for
+       _diffrn_source.size. (bm, after Marco Santucci)
 ;
