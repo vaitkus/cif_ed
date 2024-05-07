@@ -29,20 +29,30 @@ _diffrn_measurement_integration        stepwise
 
 For sample materials of a scale suitable for structure determination by electron diffraction, the key word 'nanocrystal' should appear in this free-text field, even where the sample contains amorphous or poorly characterized regions. 
 
-
 ## `_exptl_crystal_colour`
 
 The crystal colour is normally required by checkCIF, but can be difficult or impossible to determine for nanocrystals. In such a case the special CIF character `?` (unquoted) may be used with the meaning 'unknown', or a value of 'undetermined' may be given.
 
+## `_diffrn_measurement.tracking` and `_diffrn_measurement.tracking_method`
+
+`_diffrn_measurement.tracking` is a simple yes/no code to indicate if some tracking method was used to maximize the time that the sample is illuminated by the crystal, if the crystal drifts out of the beam during data collection. Details of the method can be given as free text in the `_diffrn_measurement.tracking_method` field.
+
+## `_diffrn_radiation.illumination_mode`
+
+This data item is used to discriminate between convergent-beam (STEM) and parallel (TEM) illumination of the sample.
 
 ## `_diffrn_radiation_probe`
 
-This data item **should always be present with value 'electron'** for 3D ED structure determinations, to inform checkCIF of the nature of the study. The similar data item `_diffrn_radiation_type` is now deprecated and should **not** be used. More detailed description of the energy spectrum of the radiation source may be given in the data item _diffrn_radiation_wavelength.type if needed. _(bm: this last sentence seems to reflect changes introduced to the DDLm version of the core dictionary.)_
+This data item **should always be present with value 'electron'** for 3D ED structure determinations, to inform checkCIF of the nature of the study. The similar data item `_diffrn_radiation_type` is now deprecated and should **not** be used. More detailed description of the energy spectrum of the radiation source may be given in the data item `_diffrn_radiation_wavelength.type` if needed.
 
 
 ## `_diffrn_source` and `_diffrn_source_type`
 
 'Electron microscope' is often used as a value for `_diffrn_source` (defined as _The general class of the source of radiation._), but 'electron gun' is technically more accurate. For `_diffrn_source_type` the usual options in electron diffraction are tungsten, LaB6, Schottky FEG (field-emission gun) or cold-effect FEG.
+
+## `_diffrn_source_size`
+
+This free-text field, already present in the core dictionary, can be used to describe the appropriate measure of the beam size at the sample. For selected-aperture electron diffraction, this should be the beam width corresponding to the aperture setting, and not the total beam width.
 
 ## `_diffrn_source_voltage` and `_diffrn_radiation_wavelength`
 
@@ -50,7 +60,7 @@ Both should be supplied for electron diffraction studies. The value of `_diffrn_
 
 ## `_diffrn_detector` and `_diffrn_detector_type`
 
-Defined respectively as _The general class of the radiation detectot_ and _The make, model or name of the detector device used._ Typical values for `_diffrn_detector` could be CCD, CMOS, 'Hybrid pixel (HPD)' or 'Direct detection camera (DDC)'.
+Defined respectively as _The general class of the radiation detector_ and _The make, model or name of the detector device used._ Typical values for `_diffrn_detector` could be CCD, CMOS, 'Hybrid pixel (HPD)' or 'Direct detection camera (DDC)'.
 
 ## `_diffrn_measurement_method_precession`
 

@@ -225,6 +225,108 @@ save_diffrn_measurement.integration
 
 save_
 
+save_diffrn_measurement.tracking
+
+    _definition.id                '_diffrn_measurement.tracking'
+    _alias.definition_id          '_diffrn_measurement_tracking'
+    _definition.update            2024-05-07
+    _description.text
+;
+    Yes or no flag indicating if a tracking method to follow the
+    crystal was used in the data acquisition. Typically used to track
+    very small crystals in electron diffraction experiments.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               tracking
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         yes                      'A crystal tracking method is used.'
+         y                        'Abbreviation for "yes".'
+         no                       'A crystal tracking method is not used.'
+         n                        'Abbreviation for "no".'
+
+    _enumeration.default          no
+
+save_
+
+save_diffrn_measurement.tracking_method
+
+    _definition.id                '_diffrn_measurement.tracking_method'
+    _alias.definition_id          '_diffrn_measurement_tracking_method'
+    _definition.update            2024-05-07
+    _description.text
+;
+    Description of the method used to follow the crystal during data collection.
+;
+    _name.category_id             diffrn_measurement
+    _name.object_id               tracking_method
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+    _description_example.case     'Electron-beam tracking by PyFast-ADT'
+
+save_
+
+save_diffrn_radiation.illumination_mode
+
+    _definition.id                '_diffrn_radiation.illumination_mode'
+    _alias.definition_id          '_diffrn_radiation'
+    _definition.update            2024-05-07
+    _description.text
+;
+    Code describing the optical configuration of the incident beam at
+    the sample. For electron diffraction, parallel illumination is
+    the normal mode in transmission electron microscopy (TEM),
+    convergent-beam in scanning transmission electron microscopy
+    (STEM).
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               illumination_mode
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    loop_
+      _enumeration_set.state
+      _enumeration_set.detail
+         convergent               'Convergent-beam illumination'
+         parallel                 'Parallel illumination'
+
+    _enumeration.default          no
+
+save_
+
+save_diffrn_source.size
+
+    _definition.id                '_diffrn_source.size'
+    _alias.definition_id          '_diffrn_source_size'
+    _definition.update            2012-11-26
+    _description.text
+;
+    Description of the collimated source beam as viewed from the sample.
+;
+    _name.category_id             diffrn_source
+    _name.object_id               size
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         '8mm x 0.4 mm fine-focus'
+         'broad focus'
+         '300 nm electron beam in NBED (nano-beam electron diffraction)'
+         '1 micrometre aperture size in SAED (selected-aperture el. diffr.)'
+
+save_
+
 save_refine.diffraction_theory
 
     _definition.id                '_refine.diffraction_theory'
@@ -512,7 +614,6 @@ save_refine_ls.abs_structure_z-score
     _type.source                  Derived
     _type.container               Single
     _type.contents                Real
-    _enumeration.range            :
     _units.code                   none
 
 save_
