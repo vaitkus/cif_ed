@@ -13,7 +13,7 @@ data_CIF_ED
     _dictionary.title            CIF_ED
     _dictionary.class            Instance
     _dictionary.version          0.1.0
-    _dictionary.date             2024-05-08
+    _dictionary.date             2024-05-07
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_ed/main/cif_ed.dic
     _dictionary.ddl_conformance  4.2.0
