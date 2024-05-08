@@ -70,7 +70,7 @@ If beam precession was used, this data item should be present and have the value
 
 The method of collecting data from regions of reciprocal space should take one of the values 'beam-tilt', 'rotation' (or its synonym 'continuous') or 'stepwise' according to the technique used. The beam-tilt method is sometimes called 'the rotation method' in 3D electron diffraction.
 
-## `exptl.crystals_number`
+## `_exptl.crystals_number`
 
 The number of crystals used in the measurement of intensities should be specified.
 
@@ -82,6 +82,6 @@ This data item can take the values 'dynamical' and 'kinematical', and should alw
 
 These quantities were defined in the original core CIF dictionary as indications of the final difference electron density. For electron diffraction, they should report the maximum, minimum and mean difference potential in the final difference Fourier map, and be expressed in units of electrons per ångström.
 
-## `_refine_ls.abs_structure_z_score`
+## `_refine_ls.abs_structure_z-score`
 
 The statistical _z_ score can be determined as a robust measure of the confidence of an absolute structure assignment according to the procedure described in Klar, P. B., Krysiak, Y., Xu, H., Steciuk, G.,Cho, J., Zou, X. & Palatinus, L. (2023). Accurate structure models and absolute configuration determination using dynamical effects in continuous-rotation 3D electron diffraction data. _Nature Chem._ **15**, 848-855. This method is not specific to electron diffraction and may also be used for X-ray diffraction data, but for X-ray work it has largely been superseded by the Flack, Rogers and Parsons parameters.
