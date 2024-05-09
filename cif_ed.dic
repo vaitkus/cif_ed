@@ -114,7 +114,6 @@ save_
 save_diffrn.precession_angle
 
     _definition.id                '_diffrn.precession_angle'
-    _alias.definition_id          '_diffrn_precession_angle'
     _definition.update            2024-04-22
     _description.text
 ;
@@ -135,7 +134,6 @@ save_
 save_diffrn.precession_angle_su
 
     _definition.id                '_diffrn.precession_angle_su'
-    _alias.definition_id          '_diffrn_precession_angle_su'
     _definition.update            2024-04-22
     _description.text
 ;
@@ -145,7 +143,7 @@ save_diffrn.precession_angle_su
     _name.object_id               precession_angle_su
     _name.linked_item_id          '_diffrn.precession_angle'
     _type.purpose                 SU
-    _type.source                  Recorded
+    _type.source                  Related
     _type.container               Single
     _type.contents                Real
     _units.code                   degrees
@@ -155,7 +153,6 @@ save_
 save_diffrn_measurement.method_precession
 
     _definition.id                '_diffrn_measurement.method_precession'
-    _alias.definition_id          '_diffrn_measurement_method_precession'
     _definition.update            2024-04-22
     _description.text
 ;
@@ -183,7 +180,6 @@ save_
 save_diffrn_measurement.integration
 
     _definition.id                '_diffrn_measurement.integration'
-    _alias.definition_id          '_diffrn_measurement_integration'
     _definition.update            2024-04-22
     _description.text
 ;
@@ -228,7 +224,6 @@ save_
 save_diffrn_measurement.tracking
 
     _definition.id                '_diffrn_measurement.tracking'
-    _alias.definition_id          '_diffrn_measurement_tracking'
     _definition.update            2024-05-07
     _description.text
 ;
@@ -257,7 +252,6 @@ save_
 save_diffrn_measurement.tracking_method
 
     _definition.id                '_diffrn_measurement.tracking_method'
-    _alias.definition_id          '_diffrn_measurement_tracking_method'
     _definition.update            2024-05-07
     _description.text
 ;
@@ -276,7 +270,6 @@ save_
 save_diffrn_radiation.illumination_mode
 
     _definition.id                '_diffrn_radiation.illumination_mode'
-    _alias.definition_id          '_diffrn_radiation'
     _definition.update            2024-05-07
     _description.text
 ;
@@ -298,7 +291,7 @@ save_diffrn_radiation.illumination_mode
          convergent               'Convergent-beam illumination'
          parallel                 'Parallel illumination'
 
-    _enumeration.default          no
+    _enumeration.default          parallel
 
 save_
 
@@ -330,7 +323,6 @@ save_
 save_refine.diffraction_theory
 
     _definition.id                '_refine.diffraction_theory'
-    _alias.definition_id          '_refine_diffraction_theory'
     _definition.update            2024-04-22
     _description.text
 ;
@@ -415,8 +407,7 @@ save_refine_diff.density_max_su
     _definition.update            2024-05-01
     _description.text
 ;
-    Standard uncertainty of the maximum density value
-    in a difference Fourier map.
+    Standard uncertainty of _refine_diff.density_max.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_max_su
@@ -488,8 +479,7 @@ save_refine_diff.density_min_su
     _definition.update            2024-05-01
     _description.text
 ;
-    Standard uncertainty of the minimum density value
-    in a difference Fourier map.
+    Standard uncertainty of _refine_diff.density_min.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_min_su
@@ -566,8 +556,7 @@ save_refine_diff.density_rms_su
     _definition.update            2024-05-01
     _description.text
 ;
-    Standard uncertainty of the root mean square density value
-    in a difference Fourier map.
+    Standard uncertainty of _refine_diff.density_RMS.
 ;
     _name.category_id             refine_diff
     _name.object_id               density_RMS_su
@@ -594,7 +583,6 @@ save_
 save_refine_ls.abs_structure_z-score
 
     _definition.id                '_refine_ls.abs_structure_z-score'
-    _alias.definition_id          '_refine_ls_abs_structure_z-score'
 
     _definition.update            2024-05-03
     _description.text
@@ -630,7 +618,7 @@ save_
          0.1.0                    2024-05-07
 ;
        Initial draft of new or revised (from coreCIF) data definitions
-       following nanED round robin project (B. McMahon)
+       following nanED round robin project. (B. McMahon)
 
        Updated definition of items in category REFINE_DIFF to modify
        units for electron diffraction. (bm, after Lukas Palatinus)
@@ -640,4 +628,6 @@ save_
        New items _diffrn_radiation.illumination_mode,
        _diffrn_measurement.tracking and *_method added; new examples for
        _diffrn_source.size. (bm, after Marco Santucci)
+
+       Changed _type.source of _diffrn.precession_angle_su to 'Related'.
 ;

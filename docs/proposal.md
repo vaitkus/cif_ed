@@ -8,10 +8,10 @@ After discussions on the topic, the NanED SC proposes the roadmap to the necessa
 
 ## 2.	Changes to the CIF dictionary
 
-*	Adding a keyword specifying if precession electron diffraction was used..
+*	Adding a keyword specifying if precession electron diffraction was used.
 Possible keyword: `_diffrn_precession_angle XX` (numerical value in degrees)
 
-*	Adding a keyword specifying if the refinement was kinematical or dynamical..
+*	Adding a keyword specifying if the refinement was kinematical or dynamical.
 Possible keyword: `_refine_diffraction_theory 'value'`, with permitted values ‘kinematical’, ‘dynamical’, ‘two-beam’
 
 *	Adding an additional option to `_chemical_absolute_configuration`. In addition to the existing options, an option ‘dyn’ could be used to specify determination by dynamical refinement
