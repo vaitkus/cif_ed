@@ -40,7 +40,9 @@ save_CIF_ED_HEAD
     _name.object_id              CIF_ED_HEAD
 
     _import.get
-        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
+        [
+         {'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE_HEAD}
+        ]
 
 save_
 
@@ -626,4 +628,7 @@ save_
        _refine.diffraction_theory
 
        Changed name of Head category in line with evolving COMCIFS standards.
+
+       Updated the CIF_CORE dictionary import statement with the new Head
+       category name.
 ;
