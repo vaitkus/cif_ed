@@ -13,7 +13,7 @@ data_CIF_ED
     _dictionary.title            CIF_ED
     _dictionary.class            Instance
     _dictionary.version          0.1.0
-    _dictionary.date             2024-05-07
+    _dictionary.date             2024-05-15
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_ed/main/cif_ed.dic
     _dictionary.ddl_conformance  4.2.0
@@ -25,20 +25,19 @@ data_CIF_ED
     that technique.
 ;
 
-save_ED_GROUP
+save_CIF_ED_HEAD
 
-    _definition.id               ED_GROUP
+    _definition.id               CIF_ED_HEAD
     _definition.scope            Category
     _definition.class            Head
-    _definition.update           2024-04-22
+    _definition.update           2024-05-15
     _description.text
 ;
-     The ED_GROUP data items describe atomic information specific to
-     crystallographic structure determination using electron
-     diffraction.
+     This category is the Head category for an extension dictionary used for
+     crystallographic structure determination using electron diffraction.
 ;
     _name.category_id            CIF_ED
-    _name.object_id              ED_GROUP
+    _name.object_id              CIF_ED_HEAD
 
     _import.get
         [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
@@ -153,7 +152,7 @@ save_
 save_diffrn_measurement.method_precession
 
     _definition.id                '_diffrn_measurement.method_precession'
-    _definition.update            2024-04-22
+    _definition.update            2024-05-15
     _description.text
 ;
     Yes or no flag indicating if the radiation beam illuminates the sample
@@ -173,14 +172,12 @@ save_diffrn_measurement.method_precession
          no                       'Precession method is not used.'
          n                        'Abbreviation for "no".'
 
-    _enumeration.default          no
-
 save_
 
 save_diffrn_measurement.integration
 
     _definition.id                '_diffrn_measurement.integration'
-    _definition.update            2024-04-22
+    _definition.update            2024-05-15
     _description.text
 ;
     Code describing the technique used to sample as completely as possible
@@ -217,14 +214,12 @@ save_diffrn_measurement.integration
          electron diffraction.
 ;
 
-    _enumeration.default          rotation
-
 save_
 
 save_diffrn_measurement.tracking
 
     _definition.id                '_diffrn_measurement.tracking'
-    _definition.update            2024-05-07
+    _definition.update            2024-05-15
     _description.text
 ;
     Yes or no flag indicating if a tracking method to follow the
@@ -244,8 +239,6 @@ save_diffrn_measurement.tracking
          y                        'Abbreviation for "yes".'
          no                       'A crystal tracking method is not used.'
          n                        'Abbreviation for "no".'
-
-    _enumeration.default          no
 
 save_
 
@@ -270,7 +263,7 @@ save_
 save_diffrn_radiation.illumination_mode
 
     _definition.id                '_diffrn_radiation.illumination_mode'
-    _definition.update            2024-05-07
+    _definition.update            2024-05-15
     _description.text
 ;
     Code describing the optical configuration of the incident beam at
@@ -290,8 +283,6 @@ save_diffrn_radiation.illumination_mode
       _enumeration_set.detail
          convergent               'Convergent-beam illumination'
          parallel                 'Parallel illumination'
-
-    _enumeration.default          parallel
 
 save_
 
@@ -323,7 +314,7 @@ save_
 save_refine.diffraction_theory
 
     _definition.id                '_refine.diffraction_theory'
-    _definition.update            2024-04-22
+    _definition.update            2024-05-15
     _description.text
 ;
     A code describing the approach to the calculation of the
@@ -354,8 +345,6 @@ save_refine.diffraction_theory
          Interactions between diffracted waves and matter are ignored
          when calculating the amplitudes of diffracted beams.
 ;
-
-    _enumeration.default          kinematical
 
 save_
 
@@ -615,7 +604,7 @@ save_
 ;
        Basic skeleton of dictionary set up (no definitions).
 ;
-         0.1.0                    2024-05-07
+         0.1.0                    2024-05-15
 ;
        Initial draft of new or revised (from coreCIF) data definitions
        following nanED round robin project. (B. McMahon)
@@ -630,4 +619,11 @@ save_
        _diffrn_source.size. (bm, after Marco Santucci)
 
        Changed _type.source of _diffrn.precession_angle_su to 'Related'.
+
+       Removed inappropriate _enumeration.default from
+       _diffrn_measurement.method_precession, _diffrn_measurement.integration,
+       _diffrn_measurement.tracking, _diffrn_radiation.illumination_mode,
+       _refine.diffraction_theory
+
+       Changed name of Head category in line with evolving COMCIFS standards.
 ;
