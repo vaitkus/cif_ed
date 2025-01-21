@@ -1,0 +1,131 @@
+#\#CIF_2.0
+##############################################################################
+# Some possible additions to the initial cif_ed.dic for electron diffraction.#
+# These are tentative new items to extend cif_img.dic for raw data.          #
+##############################################################################
+
+
+data_DRAFT_NEW_ITEMS
+
+    _dictionary.title            DRAFT_NEW_ITEMS
+    _dictionary.class            Instance
+    _dictionary.version          0.0.9-dev
+    _dictionary.date             2024-07-25
+    _dictionary.uri
+        https://raw.githubusercontent.com/COMCIFS/cif_ed/main/draft_new_items.dic
+    _dictionary.ddl_conformance  4.2.0
+    _dictionary.namespace        CifCore
+    _description.text
+;
+    This dictionary defines additional draft data items under consideration
+    for adding to the cif_ed.dic file.
+;
+
+save_DRAFT_NEW_ITEMS_HEAD
+
+    _definition.id               DRAFT_NEW_ITEMS_HEAD
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2024-07-22
+    _description.text
+;
+     This category is the Head category for an extension dictionary used for
+     crystallographic structure determination using electron diffraction.
+;
+    _name.category_id            DRAFT_NEW_ITEMS
+    _name.object_id              DRAFT_NEW_ITEMS_HEAD
+
+    _import.get
+        [
+         {'dupl':Ignore  'file':https://github.com/COMCIFS/imgCIF/blob/master/cif_img.dic  'mode':Full  'save':HEAD}
+        ]
+
+save_
+
+save_diffrn_scan_frame.precession_angle
+
+    _definition.id                '_diffrn_scan_frame.precession_angle'
+    _definition.update            2024-07-15
+    _description.text
+;
+    For this frame, the angle at the sample of tilt from the normal
+    direction of a radiation beam moved in a precessional scan.
+;
+    _name.category_id             diffrn_scan_frame
+    _name.object_id               precession_angle
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   degrees
+
+save_
+
+save_diffrn_scan_frame.precession_angle_su
+
+    _definition.id                '_diffrn_scan_frame.precession_angle_su'
+    _definition.update            2024-07-15
+    _description.text
+;
+    Standard uncertainty of _diffrn_scan_frame.precession_angle.
+;
+    _name.category_id             diffrn_scan_frame
+    _name.object_id               precession_angle_su
+    _name.linked_item_id          '_diffrn_scan_frame.precession_angle'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   degrees
+
+save_
+
+save_diffrn_scan_frame.scale_factor
+
+    _definition.id                '_diffrn_scan_frame.scale_factor'
+    _definition.update            2024-07-15
+    _description.text
+;
+    The scale factor for this frame.
+;
+    _name.category_id             diffrn_scan_frame
+    _name.object_id               scale_factor
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   none
+
+save_
+
+save_diffrn_scan_frame.scale_factor_su
+
+    _definition.id                '_diffrn_scan_frame.scale_factor_su'
+    _definition.update            2024-07-15
+    _description.text
+;
+    Standard uncertainty of _diffrn_scan_frame.scale_factor.
+;
+    _name.category_id             diffrn_scan_frame
+    _name.object_id               scale_factor_su
+    _name.linked_item_id          '_diffrn_scan_frame.scale_factor'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   none
+
+save_
+
+    loop_
+      _dictionary_audit.version
+      _dictionary_audit.date
+      _dictionary_audit.revision
+
+         0.0.9-dev                2024-07-25
+;
+       Development version of dictionary extension to imgCIF with
+       requirements arising from electron diffraction.
+;
