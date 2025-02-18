@@ -4,15 +4,14 @@
 # These are tentative new items to extend cif_img.dic for raw data.          #
 ##############################################################################
 
-
 data_DRAFT_NEW_ITEMS
 
     _dictionary.title            DRAFT_NEW_ITEMS
     _dictionary.class            Instance
-    _dictionary.version          0.0.9-dev
+    _dictionary.version          0.0.10-dev
     _dictionary.date             2024-07-25
     _dictionary.uri
-        https://raw.githubusercontent.com/COMCIFS/cif_ed/main/draft_new_items.dic
+       https://raw.githubusercontent.com/COMCIFS/cif_ed/main/draft_new_items.dic
     _dictionary.ddl_conformance  4.2.0
     _dictionary.namespace        CifCore
     _description.text
@@ -37,7 +36,9 @@ save_DRAFT_NEW_ITEMS_HEAD
 
     _import.get
         [
-         {'dupl':Ignore  'file':https://github.com/COMCIFS/imgCIF/blob/master/cif_img.dic  'mode':Full  'save':HEAD}
+         {'dupl':Ignore
+          'file':https://github.com/COMCIFS/imgCIF/blob/master/cif_img.dic
+          'mode':Full  'save':HEAD}
         ]
 
 save_
@@ -128,4 +129,8 @@ save_
 ;
        Development version of dictionary extension to imgCIF with
        requirements arising from electron diffraction.
+;
+         0.0.10-dev               2025-02-17
+;
+       Minor tweaks to layout to resolve layout infringements.
 ;
