@@ -17,7 +17,7 @@ data_DRAFT_NEW_ITEMS
     _description.text
 ;
     Development version of dictionary extension to imgCIF with
-    requirements arising from electron diffraction.
+    requirements arising from electron diffraction. +
 ;
 
     loop_
