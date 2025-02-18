@@ -22,7 +22,7 @@ data_CIF_ED
 ;
     This dictionary defines data items used to specify the aspects of
     crystal structures determined by electron diffraction specific to
-    that technique.
+    that technique. +
 ;
 
     loop_
