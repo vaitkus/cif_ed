@@ -8,17 +8,26 @@ data_DRAFT_NEW_ITEMS
 
     _dictionary.title            DRAFT_NEW_ITEMS
     _dictionary.class            Instance
-    _dictionary.version          0.0.10-dev
-    _dictionary.date             2024-07-25
+    _dictionary.version          0.0.10
+    _dictionary.date             2025-02-18
     _dictionary.uri
        https://raw.githubusercontent.com/COMCIFS/cif_ed/main/draft_new_items.dic
     _dictionary.ddl_conformance  4.2.0
     _dictionary.namespace        CifCore
     _description.text
 ;
-    This dictionary defines additional draft data items under consideration
-    for adding to the cif_ed.dic file.
+    Development version of dictionary extension to imgCIF with
+    requirements arising from electron diffraction.
 ;
+
+    loop_
+      _dictionary_author.id
+      _dictionary_author.id_ORCID
+      _dictionary_author.name
+      _dictionary_author.email
+         1   0000-0002-8987-8164   'Palatinus, Lukáš'   palat@fzu.cz
+         2   0000-0002-7367-4343   'Santucci, Marco'    msantucc@uni-mainz.de
+         3   0000-0002-9042-8603   'Suresh, Ashwin'     suresh@fzu.cz
 
 save_DRAFT_NEW_ITEMS_HEAD
 
@@ -125,12 +134,7 @@ save_
       _dictionary_audit.date
       _dictionary_audit.revision
 
-         0.0.9-dev                2024-07-25
+         0.0.10                   2025-02-18
 ;
-       Development version of dictionary extension to imgCIF with
-       requirements arising from electron diffraction.
-;
-         0.0.10-dev               2025-02-17
-;
-       Minor tweaks to layout to resolve layout infringements.
+       Initial draft dictionary.
 ;
