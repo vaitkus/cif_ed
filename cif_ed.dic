@@ -30,8 +30,8 @@ data_CIF_ED
       _dictionary_author.id_ORCID
       _dictionary_author.name
       _dictionary_author.email
-         2   0000-0002-7367-4343   'Santucci, Marco'    msantucc@uni-mainz.de
-         3   0000-0002-9042-8603   'Suresh, Ashwin'     suresh@fzu.cz
+         2    0000-0002-7367-4343    'Santucci, Marco'    msantucc@uni-mainz.de
+         3    0000-0002-9042-8603    'Suresh, Ashwin'     suresh@fzu.cz
 
 save_CIF_ED_HEAD
 

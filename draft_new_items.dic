@@ -25,8 +25,8 @@ data_DRAFT_NEW_ITEMS
       _dictionary_author.id_ORCID
       _dictionary_author.name
       _dictionary_author.email
-         2   0000-0002-7367-4343   'Santucci, Marco'    msantucc@uni-mainz.de
-         3   0000-0002-9042-8603   'Suresh, Ashwin'     suresh@fzu.cz
+         2    0000-0002-7367-4343    'Santucci, Marco'    msantucc@uni-mainz.de
+         3    0000-0002-9042-8603    'Suresh, Ashwin'     suresh@fzu.cz
 
 save_DRAFT_NEW_ITEMS_HEAD
 
@@ -136,4 +136,8 @@ save_
          0.0.10                   2025-02-18
 ;
        Initial draft dictionary.
+;
+         0.0.11                   2025-02-18
+;
+       Ongoing dev-version.
 ;
