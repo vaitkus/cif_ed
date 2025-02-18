@@ -25,7 +25,6 @@ data_DRAFT_NEW_ITEMS
       _dictionary_author.id_ORCID
       _dictionary_author.name
       _dictionary_author.email
-         1   0000-0002-8987-8164   'Palatinus, Lukáš'   palat@fzu.cz
          2   0000-0002-7367-4343   'Santucci, Marco'    msantucc@uni-mainz.de
          3   0000-0002-9042-8603   'Suresh, Ashwin'     suresh@fzu.cz
 
